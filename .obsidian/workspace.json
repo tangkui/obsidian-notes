@@ -1,40 +1,24 @@
 {
   "main": {
-    "id": "601dea89f6c8ed90",
+    "id": "1f664978428fa211",
     "type": "split",
     "children": [
       {
-        "id": "52ef1e15af117651",
+        "id": "439086f8d5adb2a9",
         "type": "tabs",
         "children": [
           {
-            "id": "1bedfefcecbda137",
+            "id": "78114eea3656d765",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "欢迎.md",
-                "mode": "source",
+                "file": "java/jvm/GC.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "欢迎"
-            }
-          }
-        ]
-      },
-      {
-        "id": "0717c2c5fd7cf815",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "2627634dbe21f6c9",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "关系图谱"
+              "title": "GC"
             }
           }
         ]
@@ -43,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "622226bb2327d6d0",
+    "id": "b15cf388906aa17c",
     "type": "split",
     "children": [
       {
-        "id": "26a459d7d00ee724",
+        "id": "ec53243c65080b5b",
         "type": "tabs",
         "children": [
           {
-            "id": "33ac3fbaef7da720",
+            "id": "2ac3afe2debf0a27",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -64,7 +48,7 @@
             }
           },
           {
-            "id": "cec567d81093d6c1",
+            "id": "c764895987c65344",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -81,7 +65,7 @@
             }
           },
           {
-            "id": "c738ac0661ed742b",
+            "id": "8cf2c8480fc1f3de",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -97,20 +81,19 @@
     "width": 300
   },
   "right": {
-    "id": "1191339143586a3e",
+    "id": "8f171523d3226127",
     "type": "split",
     "children": [
       {
-        "id": "a7b97327add647ce",
+        "id": "265dd34d1266e17e",
         "type": "tabs",
         "children": [
           {
-            "id": "063e30648f384cc2",
+            "id": "4d843a1776510c3d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "欢迎.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,25 +103,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "欢迎 的反向链接列表"
+              "title": "反向链接"
             }
           },
           {
-            "id": "74a02aef9aadfb00",
+            "id": "f74f5bea6e17e20f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "欢迎.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "欢迎 的出链列表"
+              "title": "出链"
             }
           },
           {
-            "id": "bcb9abfd0b27ce0e",
+            "id": "73148194d69cfa4e",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,26 +135,35 @@
             }
           },
           {
-            "id": "2a47a9aa763e1aa5",
+            "id": "701005332d2afe26",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "欢迎.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "欢迎 的大纲"
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "c6141613e1d72fe0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,11 +173,36 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false
+      "bases:创建新数据库": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1bedfefcecbda137",
+  "active": "78114eea3656d765",
   "lastOpenFiles": [
-    "欢迎.md"
+    "java/jvm/栈上分配.md",
+    "java/jvm/锁.md",
+    "java/jvm/时间空间复杂度.md",
+    "java/jvm/内存分配策略.md",
+    "git/rebase操作.md",
+    "java/jvm/GC.md",
+    "java/jvm",
+    "java",
+    "计算机/1-RAM和ROM.md",
+    "git",
+    "计算机/2-寄存器.md",
+    "欢迎.md",
+    "计算机/1-RAM&ROM.md",
+    "1-RAM和ROM.md",
+    "script/git/未命名.base",
+    "计算机/未命名",
+    "计算机",
+    "script/git/未命名.md",
+    "script/git/setup_github_ssh.sh",
+    "script/setup_github_ssh.sh",
+    "script/git",
+    "script",
+    "2025-08-28.md",
+    "未命名/未命名.md",
+    "未命名.canvas"
   ]
 }
