@@ -4,7 +4,39 @@
 ```bash
 # 在 JVM 启动参数里加上，重启前或下次再出现 OOM 时，一定 **dump 堆快照**，便于事后分析
 -XX:+HeapDumpOnOutOfMemoryError
+# 以下配置2选一
+
+# 最好是使用这个，不指定具体文件名，自动生成，动态，命名
+-XX:HeapDumpPath=/tmp/log/dumps/
+
+# 指定dum文件具体名称（可能会存在句柄被占用导致某节点不断重启的问题）
 -XX:HeapDumpPath=/tmp/heapdump.hprof
+
+### 问题点
+
+1. **文件句柄占用**
+    
+    - JVM 在写 heap dump 时，会打开 `/tmp/heapdump.hprof` 文件句柄。
+        
+    - 如果 dump 文件特别大，写的过程比较长，句柄可能一直被占着。
+        
+    - 在 Kubernetes/Docker 环境下，如果监控或者探针检测到进程长时间无响应，就可能触发 Pod 重启。
+        
+2. **文件锁冲突 / 覆盖问题**
+    
+    - 如果服务频繁 OOM，每次都往同一个 `/tmp/heapdump.hprof` 写，会导致：
+        
+        - 文件不断被覆盖。
+            
+        - 某些 JVM 实现会在已有文件句柄被占用时无法重新写入，甚至报错。
+            
+    - 在集群环境下，如果多个副本都挂载了同一个 `/tmp` 目录，也可能出现多个 JVM 争抢写同一个文件，导致失败或异常。
+        
+3. **崩溃循环（CrashLoopBackOff）**
+    
+    - 当 JVM 一直在尝试写 dump → 被卡住 → 探针超时 → Pod 重启 → 再次 OOM → 再次写同一个文件 → 继续卡住。
+        
+    - 就会出现“不断重启”的现象。
 ```
 
 
