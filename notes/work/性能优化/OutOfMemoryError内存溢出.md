@@ -6,7 +6,7 @@
 -XX:+HeapDumpOnOutOfMemoryError
 # 以下配置2选一
 
-# 最好是使用这个，不指定具体文件名，自动生成，动态，命名
+# 最好是使用这个，不指定具体文件名，自动生成，动态命名：java_pid76932.hprof
 -XX:HeapDumpPath=/tmp/log/dumps/
 
 # 指定dum文件具体名称（可能会存在句柄被占用导致某节点不断重启的问题）
