@@ -9,12 +9,14 @@
 # 最好是使用这个，不指定具体文件名，自动生成，动态命名：java_pid76932.hprof
 -XX:HeapDumpPath=/tmp/log/dumps/
 
-# 指定dum文件具体名称（可能会存在句柄被占用导致某节点不断重启的问题）
+# 指定dum文件具体名称（可能会存在句柄被占用导致某节点不断重启的问题，参考以下[问题点]）
 -XX:HeapDumpPath=/tmp/heapdump.hprof
+
+```
 
 ### 问题点
 
-1. **文件句柄占用**
+1. **文件句柄占用** 
     
     - JVM 在写 heap dump 时，会打开 `/tmp/heapdump.hprof` 文件句柄。
         
@@ -37,8 +39,8 @@
     - 当 JVM 一直在尝试写 dump → 被卡住 → 探针超时 → Pod 重启 → 再次 OOM → 再次写同一个文件 → 继续卡住。
         
     - 就会出现“不断重启”的现象。
-```
 
+--- 
 
 - **jvm启动参数没有自动dump的情况下，需要手动dump**
 - **在OutOfMemoryError报错时，及时执行以下命令**
@@ -51,7 +53,7 @@ jmap -dump:format=b,file=/tmp/heap_$(date +%Y%m%d_%H%M%S).hprof <PID>
 
 ```
 
-- **文件传输到oss**
+- **文件传输到oss（Rancher：微服务所在的docker执行）** 
 ``` bash
 # 下载传输工具
 curl https://gosspublic.alicdn.com/ossutil/1.7.13/ossutil64?spm=5176.8466032.services.dutil-linux64.19931450VCDPki -o /usr/local/bin/ossutil64
